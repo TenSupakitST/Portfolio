@@ -34,3 +34,74 @@ window.addEventListener('scroll', () => {
     a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
 });
+
+
+/* PROJECT DETAILS MODAL */
+const projectModal =
+  document.getElementById("projectModal");
+
+const openProjectBtn =
+  document.getElementById("viewProjectDetails");
+
+const closeProjectBtn =
+  document.getElementById("closeProjectModal");
+
+let previousFocus = null;
+
+function openProjectModal() {
+  previousFocus = document.activeElement;
+  projectModal.hidden = false;
+  document.body.classList.add("modal-open");
+  closeProjectBtn.focus();
+}
+
+function closeProjectModal() {
+  projectModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  previousFocus?.focus();
+}
+
+openProjectBtn.addEventListener(
+  "click",
+  openProjectModal
+);
+
+closeProjectBtn.addEventListener(
+  "click",
+  closeProjectModal
+);
+
+projectModal.addEventListener("click", (event) => {
+  if (event.target === projectModal) {
+    closeProjectModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (projectModal.hidden) return;
+
+  if (event.key === "Escape") {
+    closeProjectModal();
+  }
+
+  if (event.key === "Tab") {
+    const focusable = Array.from(
+      projectModal.querySelectorAll(
+        'a[href], button:not([disabled])'
+      )
+    );
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey &&
+        document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey &&
+               document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+});

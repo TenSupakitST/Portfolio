@@ -47,28 +47,47 @@
     </div>
   </section>
 
+
   <!-- ABOUT -->
   <section id="about">
     <div class="about-grid fade-up">
       <div class="avatar-wrap">
         <div class="avatar">
-          <img src="img/profile/myself.JPG" alt="profile">
+          <img src="img/profile/myself.JPG" alt="Supakit Thammangoon">
         </div>
         <div class="avatar-ring"></div>
       </div>
+
       <div class="about-text">
         <div class="section-label">About Me</div>
         <h2 class="section-title">Who I Am</h2>
-        <p>I'm a full-stack developer with a passion for building beautiful and functional web applications. I love turning complex problems into simple, elegant solutions.</p>
-        <p>When I'm not coding, you'll find me exploring new technologies, contributing to open source, or enjoying a good cup of coffee.</p>
+
+        <p>
+          I'm a Computer Science student at Thammasat University,
+          aspiring to become a Data Analyst.
+        </p>
+
+        <p>
+          I'm passionate about exploring data, identifying patterns, and
+          turning information into meaningful insights. Through coursework
+          and personal projects, I'm developing my skills in SQL, Python,
+          R, and data visualization.
+        </p>
+
+        <p>
+          I'm currently seeking a Data Analyst internship opportunity
+          to gain practical experience and grow professionally.
+        </p>
+
         <div class="about-chips">
           <span class="chip">Bangkok, Thailand</span>
-          <span class="chip">Full-Stack Dev</span>
-          <span class="chip">Open to Remote</span>
+          <span class="chip">Aspiring Data Analyst</span>
+          <span class="chip">Open to Internship</span>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- SKILLS & TOOLS -->
   <div id="skills">
@@ -164,66 +183,144 @@
     </div>
   </div>
 
+
   <!-- PROJECTS -->
   <section id="projects">
     <div class="fade-up">
       <div class="section-label">What I've Built</div>
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Featured Project</h2>
     </div>
-    <div class="projects-grid fade-up">
-      <div class="project-card">
-        <div class="card-banner" style="--card-color: #2563eb;"></div>
-        <div class="card-body">
-          <div class="card-icon">🛒</div>
-          <h3>E-Commerce App</h3>
-          <p>A full-featured online store with cart, payments, and admin dashboard.</p>
-          <div class="tags">
-            <span class="tag-pill">React</span>
-            <span class="tag-pill">Node.js</span>
-            <span class="tag-pill">Stripe</span>
+
+    <div class="featured-project fade-up">
+
+      <!-- Project Details -->
+      <div class="featured-project-content">
+        <span class="project-type">
+          DATA ANALYTICS
+        </span>
+
+        <h3>E-Commerce Sales Analysis</h3>
+
+        <p>
+          Analyzed historical e-commerce sales data
+          using SQL to explore monthly trends,
+          product performance, and geographic
+          sales distribution. Developed an
+          interactive Looker Studio dashboard
+          to present key business insights.
+        </p>
+
+        <div class="project-metrics">
+          <div>
+            <strong>9.29M</strong>
+            <span>Total Sales</span>
           </div>
-          <div class="card-links">
-            <a href="#" class="card-link">GitHub →</a>
-            <a href="#" class="card-link card-link-live">Live →</a>
+          <div>
+            <strong>286</strong>
+            <span>Total Orders</span>
+          </div>
+          <div>
+            <strong>32.49K</strong>
+            <span>Avg. Order Value</span>
           </div>
         </div>
-      </div>
-      <div class="project-card">
-        <div class="card-banner" style="--card-color: #7c3aed;"></div>
-        <div class="card-body">
-          <div class="card-icon">📊</div>
-          <h3>Analytics Dashboard</h3>
-          <p>Real-time data visualization dashboard with interactive charts.</p>
-          <div class="tags">
-            <span class="tag-pill">Python</span>
-            <span class="tag-pill">D3.js</span>
-            <span class="tag-pill">PostgreSQL</span>
-          </div>
-          <div class="card-links">
-            <a href="#" class="card-link">GitHub →</a>
-            <a href="#" class="card-link card-link-live">Live →</a>
-          </div>
+
+        <div class="tags">
+          <span class="tag-pill">SQL</span>
+          <span class="tag-pill">Googlesheets</span>
+          <span class="tag-pill">Looker Studio</span>
         </div>
-      </div>
-      <div class="project-card">
-        <div class="card-banner" style="--card-color: #06b6d4;"></div>
-        <div class="card-body">
-          <div class="card-icon">💬</div>
-          <h3>Chat Application</h3>
-          <p>Real-time messaging app with rooms, file sharing, and notifications.</p>
-          <div class="tags">
-            <span class="tag-pill">Socket.io</span>
-            <span class="tag-pill">React</span>
-            <span class="tag-pill">MongoDB</span>
-          </div>
-          <div class="card-links">
-            <a href="#" class="card-link">GitHub →</a>
-            <a href="#" class="card-link card-link-live">Live →</a>
-          </div>
+
+        <div class="featured-project-actions">
+          <a
+            href="https://datastudio.google.com/reporting/efd3bdee-b501-4333-8c9f-d5a182c2f092"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            View Live Dashboard ↗
+          </a>
+
+          <button
+            type="button"
+            class="btn btn-outline"
+            id="viewProjectDetails"
+          >
+            View Details
+          </button>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div class="project-modal" id="projectModal"
+      role="dialog" aria-modal="true"
+      aria-labelledby="projectModalTitle"
+      hidden>
+    <div class="project-modal-panel">
+      <button
+        type="button"
+        class="project-modal-close"
+        id="closeProjectModal"
+        aria-label="Close project details"
+      >×</button>
+
+      <h2 id="projectModalTitle">
+        E-Commerce Sales Analysis
+      </h2>
+
+      <p class="project-modal-intro">
+        An exploratory sales analysis project using
+        SQL, Googlesheets and Looker Studio to examine historical
+        sales performance.
+      </p>
+
+      <h3>Project Workflow</h3>
+      <p>
+        Data Exploration → Data Cleaning →
+        SQL Analysis → Data Visualization
+      </p>
+
+      <h3>Monthly Sales Performance</h3>
+      <img src="img/project/e-commerce/monthly.jpg"
+          alt="Monthly sales dashboard">
+      <p>
+        Sales peaked in November 2003 and
+        November 2004, suggesting a potential
+        seasonal sales pattern.
+      </p>
+
+      <h3>Product Category Performance</h3>
+      <img src="img/project/e-commerce/product.jpg"
+          alt="Product category dashboard">
+      <p>
+        Classic Cars generated approximately
+        39.8% of total sales. Together with
+        Vintage Cars, the two categories
+        contributed approximately 58.6%.
+      </p>
+
+      <h3>Geographic Sales Performance</h3>
+      <img src="img/project/e-commerce/country.jpg"
+          alt="Geographic sales dashboard">
+      <p>
+        The USA was the largest market,
+        accounting for approximately 36.6%
+        of total sales.
+      </p>
+
+      <a
+        href="https://datastudio.google.com/reporting/efd3bdee-b501-4333-8c9f-d5a182c2f092"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Explore Interactive Dashboard ↗
+      </a>
+    </div>
+  </div>
+
 
   <!-- CERTIFICATIONS -->
   <div id="certifications">
