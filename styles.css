@@ -424,7 +424,16 @@ section {
   background: white;
   border: 1.5px solid var(--border);
   border-radius: 14px;
+
   padding: 1.2rem 0.8rem;
+
+  /* เพิ่ม */
+  height: 165px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
   transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 1px 4px rgba(15,23,42,0.04);
@@ -437,16 +446,37 @@ section {
   box-shadow: 0 8px 28px rgba(37, 99, 235, 0.13);
 }
 
+
+/* กล่องสำหรับ Icon */
 .skill-card .icon {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  line-height: 1;
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 0.7rem;
 }
 
+
+/* รูป SVG */
+.skill-card .icon img {
+  width: 90px;
+  height: 90px;
+
+  object-fit: contain;
+  display: block;
+}
+
+
+/* ชื่อ Skill */
 .skill-card span {
   font-size: 0.8rem;
   color: var(--muted);
   font-weight: 500;
+
+  line-height: 1.2;
 }
 
 /* ── PROJECTS ── */
@@ -636,12 +666,6 @@ section {
   color: var(--accent);
   font-weight: 600;
   margin-bottom: 0.2rem;
-}
-
-.cert-date {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-bottom: 0.75rem;
 }
 
 .cert-verify {
